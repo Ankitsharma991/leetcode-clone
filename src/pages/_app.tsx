@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Web application that contains leetcode problems and video solutions"
         />
       </Head>
+      <Component {...pageProps} />
     </>
   );
 }
