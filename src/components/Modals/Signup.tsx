@@ -102,7 +102,7 @@ const Signup: React.FC<SignupProps> = () => {
 
       <div
         className="text-sm font-medium text-gray-300"
-        onClick={() => handleClick("login")}
+        onClick={handleClick}
       >
         Already have an account?{" "}
         <a href="#" className="text-blue-700 hover:underline">
