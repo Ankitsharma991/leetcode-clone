@@ -30,6 +30,8 @@ const Signup: React.FC<SignupProps> = () => {
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!inputs.email || !inputs.displayName || !inputs.password)
+      return alert("Please fill all fields");
     try {
       const newUser = await createUserWithEmailAndPassword(
         inputs.email,
@@ -97,13 +99,10 @@ const Signup: React.FC<SignupProps> = () => {
         type="submit"
         className="w-full text-white focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-brand-orange hover:bg-brand-orange-s"
       >
-        Register
+        {loading ? "Registering..." : "Register"}
       </button>
 
-      <div
-        className="text-sm font-medium text-gray-300"
-        onClick={handleClick}
-      >
+      <div className="text-sm font-medium text-gray-300" onClick={handleClick}>
         Already have an account?{" "}
         <a href="#" className="text-blue-700 hover:underline">
           {" "}
