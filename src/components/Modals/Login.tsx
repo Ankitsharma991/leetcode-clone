@@ -4,14 +4,18 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useSetRecoilState } from "recoil";
+import {  AuthModalState } from "@/atoms/authModalAtom";
+
 
 type LoginProps = {};
 
 const Login: React.FC<LoginProps> = () => {
   const setAuthModalState = useSetRecoilState(authModalState);
   const handleClick = (type: "login" | "register" | "forgotPassword") => {
-    setAuthModalState((prev) => ({ ...prev, type }));
+    setAuthModalState((prev):AuthModalState=>({...prev, type, isOpen: true}));
   };
+  
+  
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
