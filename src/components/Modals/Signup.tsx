@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
-import { doc, setDoc } from "firebase/firestore";
+
 import { toast } from "react-toastify";
+import { doc, setDoc } from "firebase/firestore";
 
 type SignupProps = {};
 
@@ -102,7 +103,7 @@ const Signup: React.FC<SignupProps> = () => {
         border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
         bg-gray-600 border-gray-500 placeholder-gray-400 text-white
     "
-          placeholder="John Doe"
+          placeholder="Ankit Sharma"
         />
       </div>
       <div>
