@@ -37,7 +37,7 @@ const Topbar = () => {
                 }))
               }
             >
-              <button className="bg-dark-fill-3 py-1 px-2 cursor-pointer rounded ">
+              <button className="bg-dark-fill-3 py-1 px-2 cursor-pointer rounded text-white ">
                 Sign In
               </button>
             </Link>
