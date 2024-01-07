@@ -30,12 +30,9 @@ const Signup: React.FC<SignupProps> = () => {
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!inputs.email || !inputs.password || !inputs.displayName)
-      return alert("Please fill all fields");
+      return toast.error("Please fill all fields");
     try {
-      toast.loading("Creating your account", {
-        position: "top-center",
-        toastId: "loadingToast",
-      });
+      // toast.loading("Creating your account");
       const newUser = await createUserWithEmailAndPassword(
         inputs.email,
         inputs.password
@@ -54,15 +51,17 @@ const Signup: React.FC<SignupProps> = () => {
       };
       await setDoc(doc(firestore, "users", newUser.user.uid), userData);
       router.push("/");
+      // toast.dismiss("loadingToast");
+      toast.success("Account created successfully");
     } catch (error: any) {
-      toast.error(error.message, { position: "top-center" });
+      toast.error(error.message);
     } finally {
       toast.dismiss("loadingToast");
     }
   };
 
   useEffect(() => {
-    if (error) alert(error.message);
+    if (error) toast.error(error.message);
   }, [error]);
 
   return (
