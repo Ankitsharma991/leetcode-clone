@@ -31,7 +31,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = () => {
             </div>
             <div className="flex items-center mt-3">
               <div
-                className={` inline-block rounded-[21px] bg-opacity-[.15] px-2.5 py-1 text-xs font-medium capitalize `}
+                className={` inline-block rounded-[21px] bg-opacity-[.15] px-2.5 py-1 text-xs font-medium capitalize text-orange-400 `}
               >
                 Current Difficulty
               </div>
@@ -50,6 +50,50 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = () => {
               <div className="cursor-pointer hover:bg-dark-fill-3  rounded p-[3px]  ml-4 text-xl transition-colors duration-200 text-green-s text-dark-gray-6 ">
                 <AiFillStar className="text-dark-yellow" />
               </div>
+            </div>
+
+            {/* Problem statement */}
+            <div className="text-white text-sm">
+              <div>
+                <p>
+                  Given an array of integers nums and an integer target, return
+                  indices of the two numbers such that they add up to target.
+                  You may assume that each input would have exactly one
+                  solution, and you may not use the same element twice. You can
+                  return the answer in any order.
+                </p>
+              </div>
+            </div>
+
+            {/* Examples */}
+            <div className="mt-4">
+              <div>
+                <p className="font-medium text-white ">Example 1: </p>
+                {/* {example.img && <img src={example.img} alt='' className='mt-3' />} */}
+                <div className="example-card">
+                  <pre>
+                    <strong className="text-white">Input: </strong>nums =
+                    [2,7,11,15], target = 9
+                    <br />
+                    <strong>Output: </strong>
+                    [0,1] <br />
+                    <>
+                      <strong>Explanation:</strong> Because nums[0] + nums[1] ==
+                      9, we return [0, 1].
+                    </>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            {/* constraints */}
+            <div className="my-8 pb-4">
+              <div className="text-white text-sm font-medium">Constraints:</div>
+              <ul className="text-white ml-5 list-disc ">
+                <li>{`2 <= nums.length <= 104`}</li>
+                <li>{`-109 <= nums[i] <= 109`}</li>
+                <li>{`-109 <= target <= 109`}</li>
+                <li>Only one valid answer exists.</li>
+              </ul>
             </div>
           </div>
         </div>
